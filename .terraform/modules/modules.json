@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."}]}
+{"Modules":[{"Key":"oktapolicy","Source":"./modules/okta-auth-server-policy","Dir":"modules/okta-auth-server-policy"},{"Key":"oktagroup","Source":"./modules/okta-group","Dir":"modules/okta-group"},{"Key":"oktascope","Source":"./modules/okta-auth-server-scope","Dir":"modules/okta-auth-server-scope"},{"Key":"","Source":"","Dir":"."}]}
