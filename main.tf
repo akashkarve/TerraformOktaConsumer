@@ -6,6 +6,14 @@ provider "okta" {
   api_token = "00TmIQZlU8P6wVALSGEj8H1IqGP6fCfgcvCsKeWWrA" ## admin token
 }
 
+
+# module "oktaauthserver" {
+#   source                = "./modules/okta-auth-sever"
+#   auth_server_audience  = "terraform-module-test"
+#   auth_server_name      = "terraform-module-test"
+#   auth_server_desc      = "terraform-module-test"
+# }
+
 module "oktagroup" {
     source      = "./modules/okta-group"
     group_name  = "test-grp-tf-module"
