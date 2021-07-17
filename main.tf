@@ -36,4 +36,12 @@ module "oktapolicy" {
   policy_status          = "ACTIVE"
 }
 
+module "oktawebapp" {
+  source = "./modules/okta-web-app"
+  app_name  = "terraform-module-web-app"
+  app_grant_types = ["authorization_code", "refresh_token"]
+  app_redirect_uris = ["http://localhost:8080"]
+  app_post_logout_redirect_uris = ["http://localhost:8080"]
+}
+
 
