@@ -37,19 +37,22 @@ module "oktapolicy" {
 }
 
 # module "oktawebapp" {
-#   source = "./modules/okta-web-app"
-#   app_name  = "terraform-module-web-app"
-#   app_grant_types = ["authorization_code", "refresh_token"]
-#   app_redirect_uris = ["http://localhost:8080"]
+#   source                        = "./modules/okta-web-app"
+#   app_name                      = "terraform-module-web-app"
+#   app_grant_types               = ["authorization_code", "refresh_token"]
+#   app_redirect_uris             = ["http://localhost:8080"]
 #   app_post_logout_redirect_uris = ["http://localhost:8080"]
 # }
 
 # module "oktaspaapp" {
-#   source = "./modules/okta-spa-app"
-#   app_name  = "terraform-module-spa-app"
-#   app_grant_types = ["authorization_code"]
-#   app_redirect_uris = ["http://localhost:8080"]
+#   source                        = "./modules/okta-spa-app"
+#   app_name                      = "terraform-module-spa-app"
+#   app_grant_types               = ["authorization_code"]
+#   app_redirect_uris             = ["http://localhost:8080"]
 #   app_post_logout_redirect_uris = ["http://localhost:8080"]
 # }
 
-
+# module "oktaserviceapp" {
+#   source   = "./modules/okta-service-app"
+#   app_name = "terraform-module-service-app"
+# }
