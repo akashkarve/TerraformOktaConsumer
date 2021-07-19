@@ -26,7 +26,7 @@ variable "app_grant_types" {
         if contains(["authorization_code", "refresh_token"], gt)
         ]) == length(var.app_grant_types)
 
-     error_message = "Allowed values : [authorization_code, refresh_token]."
+     error_message = "Allowed values : [\"authorization_code\", \"refresh_token\"]."
     }
 }
 
@@ -39,6 +39,6 @@ variable "app_status" {
         condition = (
           contains(["ACTIVE", "INACTIVE"], var.app_status)
         )
-        error_message = "Allowed values : [ACTIVE, INACTIVE]."
+        error_message = "Allowed values : [\"ACTIVE\", \"INACTIVE\"]."
       }
 }

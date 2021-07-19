@@ -23,6 +23,6 @@ variable "auth_server_status" {
         condition = (
           contains(["ACTIVE", "INACTIVE"], var.auth_server_status)
         )
-        error_message = "Allowed values : [ACTIVE, INACTIVE]."
+        error_message = "Allowed values : [\"ACTIVE\", \"INACTIVE\"]."
       }
 }

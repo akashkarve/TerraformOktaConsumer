@@ -36,6 +36,6 @@ variable "policy_status" {
         condition = (
           contains(["ACTIVE", "INACTIVE"], var.policy_status)
         )
-        error_message = "Allowed values : [ACTIVE, INACTIVE]."
+        error_message = "Allowed values : [\"ACTIVE\", \"INACTIVE\"]."
       }
 }

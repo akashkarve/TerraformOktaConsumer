@@ -24,7 +24,7 @@ variable "scope_consent" {
         condition = (
           contains(["IMPLICIT", "REQUIRED"], var.scope_consent)
         )
-        error_message = "Allowed values : [IMPLICIT, REQUIRED]."
+        error_message = "Allowed values : [\"IMPLICIT\", \"REQUIRED\"]."
       }
 }
 

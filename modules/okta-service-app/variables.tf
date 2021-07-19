@@ -13,6 +13,6 @@ variable "app_status" {
         condition = (
           contains(["ACTIVE", "INACTIVE"], var.app_status)
         )
-        error_message = "Allowed values : [ACTIVE, INACTIVE]."
+        error_message = "Allowed values : [\"ACTIVE\", \"INACTIVE\"]."
       }
 }

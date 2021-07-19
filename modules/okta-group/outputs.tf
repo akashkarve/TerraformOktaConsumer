@@ -1,5 +1,5 @@
 
 
-output "okta_group" {
+output "group" {
     value = okta_group.okta_grp
 }
