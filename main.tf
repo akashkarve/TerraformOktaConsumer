@@ -76,13 +76,13 @@ module "oktapolicyrule" {
 #   app_name = "terraform-module-service-app"
 # }
 
-module "oktasamlapp" {
-  source       = "./modules/okta-saml-app"
-  app_name     = "terraform-saml-app"
-  app_sso_url  = "http://localhost:8080"
-  app_audience = "app-audience"
-  app_status   = "ACTIVE"
-}
+# module "oktasamlapp" {
+#   source       = "./modules/okta-saml-app"
+#   app_name     = "terraform-saml-app"
+#   app_sso_url  = "http://localhost:8080"
+#   app_audience = "app-audience"
+#   app_status   = "ACTIVE"
+# }
 
 ###################### OUTPUTS ###################
 output "oktagroup_op" {
@@ -101,6 +101,6 @@ output "oktapolicyrule_op" {
   value = module.oktapolicyrule.auth-server-policy-rule
 }
 
-output "oktasamlapp_op" {
-  value = module.oktasamlapp.okta_saml_app
-}
+# output "oktasamlapp_op" {
+#   value = module.oktasamlapp.okta_saml_app
+# }
