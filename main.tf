@@ -36,27 +36,6 @@ module "oktapolicy" {
   policy_status          = "ACTIVE"
 }
 
-module "oktawebapp" {
-  source                        = "./modules/okta-web-app"
-  app_name                      = "terraform-module-web-app"
-  app_grant_types               = ["authorization_code", "refresh_token"]
-  app_redirect_uris             = ["http://localhost:8080"]
-  app_post_logout_redirect_uris = ["http://localhost:8080"]
-}
-
-module "oktaspaapp" {
-  source                        = "./modules/okta-spa-app"
-  app_name                      = "terraform-module-spa-app"
-  app_grant_types               = ["authorization_code"]
-  app_redirect_uris             = ["http://localhost:8080"]
-  app_post_logout_redirect_uris = ["http://localhost:8080"]
-}
-
-module "oktaserviceapp" {
-  source   = "./modules/okta-service-app"
-  app_name = "terraform-module-service-app"
-}
-
 module "oktapolicyrule" {
   source                         = "./modules/okta-auth-server-policy-rule"
   okta_auth_server_name          = var.auth_server_name
@@ -76,6 +55,35 @@ module "oktapolicyrule" {
   ]
 }
 
+# module "oktawebapp" {
+#   source                        = "./modules/okta-web-app"
+#   app_name                      = "terraform-module-web-app"
+#   app_grant_types               = ["authorization_code", "refresh_token"]
+#   app_redirect_uris             = ["http://localhost:8080"]
+#   app_post_logout_redirect_uris = ["http://localhost:8080"]
+# }
+
+# module "oktaspaapp" {
+#   source                        = "./modules/okta-spa-app"
+#   app_name                      = "terraform-module-spa-app"
+#   app_grant_types               = ["authorization_code"]
+#   app_redirect_uris             = ["http://localhost:8080"]
+#   app_post_logout_redirect_uris = ["http://localhost:8080"]
+# }
+
+# module "oktaserviceapp" {
+#   source   = "./modules/okta-service-app"
+#   app_name = "terraform-module-service-app"
+# }
+
+module "oktasamlapp" {
+  source       = "./modules/okta-saml-app"
+  app_name     = "terraform-saml-app"
+  app_sso_url  = "http://localhost:8080"
+  app_audience = "app-audience"
+  app_status   = "ACTIVE"
+}
+
 ###################### OUTPUTS ###################
 output "oktagroup_op" {
   value = module.oktagroup.group
@@ -91,4 +99,8 @@ output "oktapolicy_op" {
 
 output "oktapolicyrule_op" {
   value = module.oktapolicyrule.auth-server-policy-rule
+}
+
+output "oktasamlapp_op" {
+  value = module.oktasamlapp.okta_saml_app
 }
