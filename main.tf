@@ -84,23 +84,38 @@ module "oktapolicyrule" {
 #   app_status   = "ACTIVE"
 # }
 
+# module "okta-app-group-assignment" {
+#   source     = "./modules/okta-assign-app-to-group"
+#   app_name   =  module.oktawebapp.okta_web_app.label 
+#   group_name =  module.oktagroup.group.name
+# }
+
 ###################### OUTPUTS ###################
-output "oktagroup_op" {
-  value = module.oktagroup.group
-}
+# output "oktagroup_op" {
+#   value = module.oktagroup.group
+# }
 
-output "oktascope_op" {
-  value = module.oktascope.okta-auth-server-scope
-}
+# output "oktascope_op" {
+#   value = module.oktascope.okta-auth-server-scope
+# }
 
-output "oktapolicy_op" {
-  value = module.oktapolicy.auth-server-policy
-}
+# output "oktapolicy_op" {
+#   value = module.oktapolicy.auth-server-policy
+# }
 
-output "oktapolicyrule_op" {
-  value = module.oktapolicyrule.auth-server-policy-rule
-}
+# output "oktapolicyrule_op" {
+#   value = module.oktapolicyrule.auth-server-policy-rule
+# }
+
+# output "oktawebapp_op" {
+#   value = module.oktawebapp.okta_web_app
+#   sensitive = true
+# }
 
 # output "oktasamlapp_op" {
 #   value = module.oktasamlapp.okta_saml_app
+# }
+
+# output "appgroupassignment_op" {
+#   value = module.okta-app-group-assignment.app-group-assignment
 # }
